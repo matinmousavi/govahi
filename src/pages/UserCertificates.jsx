@@ -8,7 +8,6 @@ import { LiaFileDownloadSolid } from 'react-icons/lia';
 const UserCertificates = () => {
   const { data: userNationalId, isLoading:userLoading } = useNationalId();
   const { data: userCertificates, isLoading: certificatesLoading } = useCertificate();
-  console.log(userCertificates);
   const params = useParams();
   let mainUser;
   if (userNationalId) {
@@ -30,7 +29,7 @@ const UserCertificates = () => {
               />
               <div className="flex-col">
                 <h2 className="max-sm:pb-2 lg:pr-3 xl:pr-4 text-4xl lg:text-3xl xl:text-3xl font-bold my-6">
-                  رضا پودینه
+                  {mainUser.name}
                 </h2>
                 <p className="pr-4 pt-2 text-lg lg:text-base xl:text-lg">
                   {mainUser.national_id}
